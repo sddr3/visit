@@ -3,97 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirecting...</title>
+<title>Please Wait...</title>
+
+<meta http-equiv="refresh" content="2;url=https://example.com">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:Arial, sans-serif;
-    background:#0f172a;
-    color:#fff;
+    margin:0;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-}
-
-.container{
-    text-align:center;
-}
-
-.spinner{
-    width:60px;
-    height:60px;
-    border:5px solid rgba(255,255,255,0.2);
-    border-top:5px solid #fff;
-    border-radius:50%;
-    margin:auto;
-    animation:spin 0.8s linear infinite;
-}
-
-h2{
-    margin-top:20px;
-    font-size:22px;
-}
-
-p{
-    margin-top:10px;
-    opacity:0.8;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
+    background:#111827;
+    color:white;
+    font-family:Arial,sans-serif;
 }
 </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="spinner"></div>
-    <h2>Redirecting...</h2>
-    <p>Please wait a moment.</p>
-</div>
-
-<script>
-const links = {
-    fb: "https://s.shopee.ph/2BCGBc2yCu?id=fb",
-    yt: "https://s.shopee.ph/2BCGBc2yCu?id=yt",
-    google: "https://google.com",
-    promo: "https://s.shopee.ph/2BCGBc2yCu?id=promo"
-};
-
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-
-if (id && links[id]) {
-
-    // Redirect after 500ms
-    setTimeout(() => {
-        window.location.replace(links[id]);
-    }, 500);
-
-} else {
-
-    document.body.innerHTML = `
-        <div style="
-            text-align:center;
-            font-family:Arial;
-            padding:40px;
-            color:white;
-        ">
-            <h1>Link Not Found</h1>
-            <p>The requested destination does not exist.</p>
-        </div>
-    `;
-}
-</script>
-
+    <h2>Loading, please wait...</h2>
 </body>
 </html>
